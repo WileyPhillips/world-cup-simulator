@@ -1,3 +1,5 @@
+import random
+
 # Starting off with teams from the 2014 world cup
 teams2014 = ["Brazil", "Mexico", "Croatia", "Cameroon", "Netherlands", "Chile", "Spain", "Australia", "Colombia",
              "Greece", "Ivory Coast", "Japan", "Costa Rica", "Uruguay", "Italy", "England", "France", "Switzerland",
@@ -24,14 +26,17 @@ for i in range(8):
 
 
 # grouped randomly
-"""for i in range(8):
+for i in range(8):
     groupStatement = "group" + groups[i] + " = ["
     for j in range(4):
+        randomTeam = random.randint(0, len(groupedList)-1)
+        print(randomTeam)
         if j != 3:
-            groupStatement += groupedList[math.random()] + ", "
-            print((i*4)+j)
+            groupStatement += groupedList[randomTeam] + ", "
+            groupedList.pop(randomTeam)
         else:
-            groupStatement = groupStatement[:-1] + " " + groupedList[(i*4)+j] +  "]"
+            groupStatement = groupStatement[:-1] + " " + groupedList[randomTeam] + "]"
+            groupedList.pop(randomTeam)
             print(groupStatement)
-"""
+
 
