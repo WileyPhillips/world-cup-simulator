@@ -6,37 +6,35 @@ teams2014 = ["Brazil", "Mexico", "Croatia", "Cameroon", "Netherlands", "Chile", 
              "Ecuador", "Honduras", "Argentina", "Nigeria", "Bosnia and Herzegovina", "Iran", "Germany", "USA",
              "Portugal", "Ghana", "Belgium", "Algeria", "Russia", "South Korea"]
 
-groups = ["A", "B", "C", "D", "E", "F", "G", "H"]
+groupLetter = ["A", "B", "C", "D", "E", "F", "G", "H"]
 
 
 # the list being used for grouping
 groupedList = teams2014
-
+groups = []
 
 # grouped in order
-for i in range(8):
-    groupStatement = "group" + groups[i] + " = ["
-    for j in range(4):
-        if j != 3:
-            groupStatement += groupedList[(i*4)+j] + ", "
-            print((i*4)+j)
-        else:
-            groupStatement = groupStatement[:-1] + " " + groupedList[(i*4)+j] +  "]"
-            print(groupStatement)
+def orderGroup():
+    groups = []
+    for i in range(8):
+        groups.append([])
+        for j in range(4):
+            groups[-1].append(groupedList[(i*4)+j])
+    print(groups)
 
 
 # grouped randomly
-for i in range(8):
-    groupStatement = "group" + groups[i] + " = ["
-    for j in range(4):
-        randomTeam = random.randint(0, len(groupedList)-1)
-        print(randomTeam)
-        if j != 3:
-            groupStatement += groupedList[randomTeam] + ", "
+def randomGroup():
+    groups = []
+    for i in range(8):
+        groups.append([])
+        for j in range(4):
+            randomTeam = random.randint(0, len(groupedList)-1)
+            groups[-1].append(groupedList[randomTeam])
             groupedList.pop(randomTeam)
-        else:
-            groupStatement = groupStatement[:-1] + " " + groupedList[randomTeam] + "]"
-            groupedList.pop(randomTeam)
-            print(groupStatement)
+    print(groups)
 
+
+orderGroup()
+randomGroup()
 
