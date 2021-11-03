@@ -1,5 +1,7 @@
 import random
 
+global groups
+
 # Starting off with teams from the 2014 world cup
 teams2014 = ["Brazil", "Mexico", "Croatia", "Cameroon", "Netherlands", "Chile", "Spain", "Australia", "Colombia",
              "Greece", "Ivory Coast", "Japan", "Costa Rica", "Uruguay", "Italy", "England", "France", "Switzerland",
@@ -15,6 +17,7 @@ groups = []
 
 # grouped in order
 def orderGroup():
+    global groups
     groups = []
     for i in range(8):
         groups.append([])
@@ -25,6 +28,7 @@ def orderGroup():
 
 # grouped randomly
 def randomGroup():
+    global groups
     groups = []
     for i in range(8):
         groups.append([])
@@ -35,6 +39,23 @@ def randomGroup():
     print(groups)
 
 
+def generateMatches():
+    print(groups)
+    matches = []
+    # Will create 8 lists inside the matches list
+    # One for each group
+    for i in range(8):
+        matches.append([])
+        # For the group being worked on it creates a list for each team in the group and their matches
+        matches[i].append([groups[i][1], groups[i][2], groups[i][3]])
+        matches[i].append([groups[i][0], groups[i][3], groups[i][2]])
+        matches[i].append([groups[i][3], groups[i][0], groups[i][1]])
+        matches[i].append([groups[i][2], groups[i][1], groups[i][0]])
+    print(matches)
+
+
+
+
 orderGroup()
 randomGroup()
-
+generateMatches()
