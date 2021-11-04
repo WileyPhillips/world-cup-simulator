@@ -1,6 +1,6 @@
 import random
 
-global groups
+global groups, globalMatchesPlayed
 
 # Starting off with teams from the 2014 world cup
 teams2014 = ["Brazil", "Mexico", "Croatia", "Cameroon", "Netherlands", "Chile", "Spain", "Australia", "Colombia",
@@ -14,6 +14,8 @@ groupLetter = ["A", "B", "C", "D", "E", "F", "G", "H"]
 # the list being used for grouping
 groupedList = teams2014
 groups = []
+groupMatchesPlayed = 0
+results = []
 
 # grouped in order
 def orderGroup():
@@ -39,7 +41,7 @@ def randomGroup():
     print(groups)
 
 
-def generateMatches():
+def generateGroupMatches():
     print(groups)
     matches = []
     # Will create 8 lists inside the matches list
@@ -47,15 +49,21 @@ def generateMatches():
     for i in range(8):
         matches.append([])
         # For the group being worked on it creates a list for each team in the group and their matches
-        matches[i].append([groups[i][1], groups[i][2], groups[i][3]])
-        matches[i].append([groups[i][0], groups[i][3], groups[i][2]])
-        matches[i].append([groups[i][3], groups[i][0], groups[i][1]])
-        matches[i].append([groups[i][2], groups[i][1], groups[i][0]])
+        matches[i].append([1, 2, 3])
+        matches[i].append([0, 3, 2])
+        matches[i].append([3, 0, 1])
+        matches[i].append([2, 1, 0])
     print(matches)
 
+
+def simulateGroupMatches:
+    global groupMatchesPlayed, results
+    #creates a match result list for each group
+    for i in range(8):
+        results.append([])
 
 
 
 orderGroup()
 randomGroup()
-generateMatches()
+generateGroupMatches()
