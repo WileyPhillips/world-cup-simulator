@@ -41,6 +41,7 @@ def randomGroup():
     print(groups)
 
 
+#
 def generateGroupMatches():
     print(groups)
     matches = []
@@ -49,19 +50,23 @@ def generateGroupMatches():
     for i in range(8):
         matches.append([])
         # For the group being worked on it creates a list for each team in the group and their matches
-        matches[i].append([1, 2, 3])
-        matches[i].append([0, 3, 2])
-        matches[i].append([3, 0, 1])
-        matches[i].append([2, 1, 0])
+        # The whole number is the index of the opponent
+        # Matches are in order that they will be played
+        # .1 will have their name and score on the left, .2 on the right
+        matches[i].append([1.1, 2.1, 3.1])
+        matches[i].append([0.2, 3.1, 2.1])
+        matches[i].append([3.1, 0.2, 1.2])
+        matches[i].append([2.2, 1.2, 0.2])
     print(matches)
 
 
-def simulateGroupMatches:
+def simulateGroupMatches():
     global groupMatchesPlayed, results
-    #creates a match result list for each group
+    # creates a match result list for each group
     for i in range(8):
         results.append([])
-
+        for j in range(4):
+            results[i].append([])
 
 
 orderGroup()
