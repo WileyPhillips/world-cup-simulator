@@ -2,6 +2,11 @@ import random
 
 global groups, globalMatchesPlayed
 
+# TODO Look into using classes for the teams
+# TODO Look into using SQL instead of lists
+# TODO see if the below strat works
+# Have every team pick a random number cross reference if it is larger or smaller than that held at the provided index
+
 # Starting off with teams from the 2014 world cup
 teams2014 = ["Brazil", "Mexico", "Croatia", "Cameroon", "Netherlands", "Chile", "Spain", "Australia", "Colombia",
              "Greece", "Ivory Coast", "Japan", "Costa Rica", "Uruguay", "Italy", "England", "France", "Switzerland",
